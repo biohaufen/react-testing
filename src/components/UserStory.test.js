@@ -8,7 +8,7 @@ describe('Test UserStory finish component', () => {
   
       const userStory = shallow((<UserStory updateStatus={mockCallBack} />));
       userStory.find('[data-behavior="finish"]').simulate('click');
-      expect(mockCallBack.mock.calls).toEqual([["finished"]]);
+      expect(mockCallBack.mock.calls[0][0]).toEqual("finished");
     });
 });
 
@@ -18,7 +18,7 @@ describe('Test UserStory deliver component', () => {
   
       const userStory = shallow((<UserStory updateStatus={mockCallBack} />));
       userStory.find('[data-behavior="deliver"]').simulate('click');
-      expect(mockCallBack.mock.calls).toEqual([["delivered"]]);
+      expect(mockCallBack.mock.calls[0][0]).toEqual("delivered");
     });
 });
 
